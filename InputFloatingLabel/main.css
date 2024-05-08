@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    background-color: rgb(8, 59, 115);
+    min-height: 100vh;
+}
+.inputBox{
+    position: relative;
+    width: 240px;
+}
+.inputBox input{
+    width: 100%;
+    padding: 20px;
+    border: 1px solid gray;
+    background-color: rgb(8, 59, 115);
+    border-radius: 5px;
+    outline: none;
+    color: white;
+    font-size: 15px;
+}
+.inputBox span{
+    position: absolute;
+    left: 0;
+    padding: 20px;
+    pointer-events: none;
+    font-size: 15px;
+    text-transform: uppercase;
+    color: rgb(121, 122, 123);
+    transition: 0.5s;
+}
+
+.inputBox input:focus + span,
+.inputBox input:valid + span {
+    color: cyan;
+    font-size: 10px;
+    padding: 0 10px;
+    background-color: rgb(8, 59, 115);
+    border-left: 1px solid cyan;
+    border-right: 1px solid cyan;
+    letter-spacing: 3px;
+    transform: translateY(-5px) translateX(10px);
+}
+.inputBox:nth-child(2) input:focus + span,
+.inputBox:nth-child(2) input:valid + span {
+    background-color: cyan;
+    color: rgb(0, 0, 0);
+    border-radius: 2px;
+    padding: 1px 10px;
+}
+
+.inputBox input:valid,
+.inputBox input:focus
+{
+    border: 1px solid cyan;
+}
