@@ -1,64 +1,76 @@
-*{
+/* Reset default margin, padding, and box-sizing for all elements */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins',sans-serif;
+    font-family: 'Poppins', sans-serif; /* Use 'Poppins' font family or fallback to generic sans-serif */
 }
-body{
-    display: flex;
+
+/* Style the body element */
+body {
+    display: flex; /* Use flexbox layout */
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    gap: 30px;
-    background-color: rgb(8, 59, 115);
-    min-height: 100vh;
-}
-.inputBox{
-    position: relative;
-    width: 240px;
-}
-.inputBox input{
-    width: 100%;
-    padding: 20px;
-    border: 1px solid gray;
-    background-color: rgb(8, 59, 115);
-    border-radius: 5px;
-    outline: none;
-    color: white;
-    font-size: 15px;
-}
-.inputBox span{
-    position: absolute;
-    left: 0;
-    padding: 20px;
-    pointer-events: none;
-    font-size: 15px;
-    text-transform: uppercase;
-    color: rgb(121, 122, 123);
-    transition: 0.5s;
+    flex-direction: column; /* Arrange child elements in a column */
+    gap: 30px; /* Set gap between flex items */
+    background-color: rgb(8, 59, 115); /* Dark blue background color */
+    min-height: 100vh; /* Ensure body fills at least the viewport height */
 }
 
+/* Style for input container */
+.inputBox {
+    position: relative; /* Position relative for absolute positioning of label */
+    width: 240px; /* Set width of input box */
+}
+
+/* Style for input fields */
+.inputBox input {
+    width: 100%; /* Fill entire width of container */
+    padding: 20px; /* Add padding for spacing */
+    border: 1px solid gray; /* Add border */
+    background-color: rgb(8, 59, 115); /* Match background color */
+    border-radius: 5px; /* Add border radius */
+    outline: none; /* Remove default outline */
+    color: white; /* Set text color */
+    font-size: 15px; /* Set font size */
+}
+
+/* Style for floating labels */
+.inputBox span {
+    position: absolute; /* Position absolutely */
+    left: 0; /* Align to left */
+    padding: 20px; /* Add padding */
+    pointer-events: none; /* Don't capture mouse events */
+    font-size: 15px; /* Set font size */
+    text-transform: uppercase; /* Transform text to uppercase */
+    color: rgb(121, 122, 123); /* Set color */
+    transition: 0.4s; /* Add transition for smooth effect */
+}
+
+/* Styling for focused and valid input fields */
 .inputBox input:focus + span,
 .inputBox input:valid + span {
-    color: cyan;
-    font-size: 10px;
-    padding: 0 10px;
-    background-color: rgb(8, 59, 115);
-    border-left: 1px solid cyan;
-    border-right: 1px solid cyan;
-    letter-spacing: 3px;
-    transform: translateY(-5px) translateX(10px);
-}
-.inputBox:nth-child(2) input:focus + span,
-.inputBox:nth-child(2) input:valid + span {
-    background-color: cyan;
-    color: rgb(0, 0, 0);
-    border-radius: 2px;
-    padding: 1px 10px;
+    color: cyan; /* Change color */
+    font-size: 10px; /* Change font size */
+    padding: 0 10px; /* Adjust padding */
+    background-color: rgb(8, 59, 115); /* Match background color */
+    border-left: 1px solid cyan; /* Add left border */
+    border-right: 1px solid cyan; /* Add right border */
+    letter-spacing: 3px; /* Adjust letter spacing */
+    transform: translateY(-5px) translateX(10px); /* Apply transformation */
 }
 
+/* Additional styling for specific input boxes */
+.inputBox:nth-child(2) input:focus + span,
+.inputBox:nth-child(2) input:valid + span {
+    background-color: cyan; /* Change background color */
+    color: rgb(0, 0, 0); /* Change color */
+    border-radius: 2px; /* Add border radius */
+    padding: 1px 10px; /* Adjust padding */
+}
+
+/* Styling for valid and focused input fields */
 .inputBox input:valid,
-.inputBox input:focus
-{
-    border: 1px solid cyan;
+.inputBox input:focus {
+    border: 1px solid cyan; /* Change border color */
 }
